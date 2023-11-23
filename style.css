@@ -1,8 +1,5 @@
-/* fonts */
-@font-face {
-  font-family'Open Sans': Open Sans;
-  src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-}
+/* FONTS  */
+
 
 /* Basic */
 * {
@@ -20,16 +17,27 @@ html {
   width: 100%;
 }
 
+/* BASIC - END */
+
+/* TEXTS */
 h1 {
-  font-size: 25px;
+  font-size: 30px;
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 25px;
   color: grey;
+  font-family: 'Roboto', sans-serif;
 }
 
+.text_left>p {
+  font-size: 22px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* MAIN */
 main {
   display: flex;
   flex-direction: row;
@@ -51,52 +59,49 @@ aside {
 
 .photo>img {
   max-width: 200px;
-  border: 1px solid;
   border-radius: 10px
 }
 
 .container1 {
-  animation: Slide 1.2s ease 0s 1 reverse forwards;
   gap: 50px;
   border: 1px solid;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
-}
-
-.container1 .email input {
-  border: 1px;
-  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .text_left {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
-.text_left>p {
-  font-size: 20px;
+.email>input {
+  border-radius: 10px;
+  border: 1px solid grey;
 }
 
-.photo {
-  display: flex;
-  flex-direction: column;
-}
-
+/* COLORS */
 .color_yellow {
-  background-color: yellow;
+  background-color: #FEE140;
+  background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
 }
 
 .color_cyan {
-  background-color: cyan;
+  background-color: #00DBDE;
+  background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
 }
 
 .color_purple {
-  background-color: purple;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
 
 .color_pink {
-  background-color: pink;
+  background-color: #FAACA8;
+  background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%);
 }
 
 .reverse {
@@ -105,12 +110,86 @@ aside {
 }
 
 /* ANIMATIONS */
-@keyframes Slide {
+
+.container1 {
+  animation: Scale 1.25s ease 0s 1 normal forwards;
+}
+
+.logo>a>img:hover {
+  animation: vibration 0.5s ease 0s infinite normal forwards;
+}
+
+
+@keyframes Scale {
   0% {
-    transform: translateX(0);
+    transform: scale(0.5);
   }
 
   100% {
-    transform: translateX(100px);
+    transform: scale(1);
+  }
+}
+
+@keyframes vibration {
+  0% {
+    transform: translate(0);
+  }
+
+  10% {
+    transform: translate(-2px, -2px);
+  }
+
+  20% {
+    transform: translate(2px, -2px);
+  }
+
+  30% {
+    transform: translate(-2px, 2px);
+  }
+
+  40% {
+    transform: translate(2px, 2px);
+  }
+
+  50% {
+    transform: translate(-2px, -2px);
+  }
+
+  60% {
+    transform: translate(2px, -2px);
+  }
+
+  70% {
+    transform: translate(-2px, 2px);
+  }
+
+  80% {
+    transform: translate(-2px, -2px);
+  }
+
+  90% {
+    transform: translate(2px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* ADDAPTATION */
+@media screen and (max-width: 1000px) {
+  main {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  .container1 {
+    width: 100%;
+    gap: 0px;
+    flex-direction: column-reverse;
   }
 }
